@@ -4,15 +4,12 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'git@github.com:DEL-ORG/Projeckt-do-it-now-Pipeline.git'
+                git branch: 'main', url: 'https://github.com/DEL-ORG/Projeckt-do-it-now-Pipeline.git'
             }
         }
         stage('Maven Test') {
             steps {
-                sh '''
-                mvn clean
-                mvn test
-                '''
+                sh 'mvn test'
             }
         }
     }
