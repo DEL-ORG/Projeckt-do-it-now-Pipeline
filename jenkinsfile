@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'git@github.com:DEL-ORG/Projeckt-do-it-now-Pipeline.git'
+            }
+        }
+        stage('Maven Test') {
+            steps {
+                sh'''
+                mvn clean
+                mvn package
+
+                '''
+            }
+        }
+    }
+}
