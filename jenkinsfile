@@ -10,7 +10,7 @@ pipeline {
     }
     
     stages {
-        stage('Cloning') {
+        stage('Cloning Repo') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/DEL-ORG/Projeckt-do-it-now-Pipeline.git'
             }
